@@ -1,0 +1,6 @@
+# Chart.yaml
+apiVersion: v2
+name: nginx-argo-rollout
+version: 0.1.0
+description: A Helm chart to deploy NGINX with Argo Rollouts
+
