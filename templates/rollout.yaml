@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: {{ .Release.Name }}-nginx
 spec:
@@ -18,8 +18,3 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
-  strategy:
-    canary:
-      steps:
-        {{- toYaml .Values.rollout.strategy.canary.steps | nindent 8 }}
-
