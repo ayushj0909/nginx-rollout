@@ -2,15 +2,8 @@ replicaCount: 3
 image:
   repository: nginx
   tag: 1.27
-  pullPolicy: Always 
+  pullPolicy: IfNotPresent 
 service:
   type: ClusterIP
   port: 80
-rollout:
-  strategy:
-    canary:
-      steps:
-        - setWeight: 20
-        - pause: { duration: 30s }
-        - setWeight: 40
-        - pause: { duration: 30s }
+
